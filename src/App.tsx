@@ -1,58 +1,32 @@
-import heroImg from './/assets/pexels-photo-3536236.jpeg'
+import { TigerPunkContextProvider } from './Components/TigerPunkContext'
+import { Home } from './Pages/Home'
+import { Gallery } from './Pages/Gallery'
+import { Merch } from './Pages/Merch'
+import { TourDates } from './Pages/TourDates'
+import { Contacts } from './Pages/Contacts'
+import { Route, Routes} from 'react-router-dom'
+import { ProductDetails } from './Components/ProductDetails'
+import { Cart } from './Pages/Cart'
 
 
 function App() {
 
-
   return (
     <>
 
-    <header>
-      <nav id="nav-bar">
-        <h1>logo</h1>
-        <ul>
-          <li className="nav-item">
-            <a href="">Home</a>
-          </li>
-          <li className="nav-item">
-            <a href="">Tour</a>
-          </li>
-          <li className="nav-item">
-            <a href="">Gallery</a>
-          </li>
-          <li className="nav-item">
-            <a href="">Merch</a>
-          </li>
-          <li className="nav-item">
-            <a href="">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-
-    <main>
-
-      <section id="hero-section">
-        <div id="hero-text">
-          <h1 className="text-fast">Fast,</h1>
-          <h1 className="text-hard">Hard,</h1>
-          <h1 className="text-loud">Loud</h1>
-          <p className='hero-text-p'>We believe that energy can be pass from person to person in the form of art.  It's how we breathe life into one another. And we will not stop, 
-            We are Tiger Punk!</p>
-          <button id="book-btn">Book Us</button>
-        </div>
-        {/* <div id='hero-img'>
-
-        </div> */}
-
-      </section>
-
-      <section>
-      </section>
-
-    </main>
-  
+    <TigerPunkContextProvider>
+      <Routes>
+        <Route  path='/' element={<Home/>} />
+        <Route  path='/Gallery' element={<Gallery/>} />
+        <Route  path='/Merch' element={<Merch/>} />
+        <Route  path='/TourDates' element={<TourDates/>} />
+        <Route  path='/Contacts' element={<Contacts/>} />
+        <Route  path='/Product/:productId' element={<ProductDetails />} />
+        <Route  path='/Cart' element={<Cart />} />
+     
+    </Routes>
+    </TigerPunkContextProvider>
+    
     </>
   )
 }
