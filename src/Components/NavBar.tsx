@@ -10,7 +10,7 @@ export const NavBar = () => {
 
   const {navItemSelected, selectNavItem, cart} = useContext(TigerPunkContext)
 
-
+const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0)
 
 	return (
 			<>
@@ -29,7 +29,7 @@ export const NavBar = () => {
           <li className={`nav-item ${navItemSelected === 'Merch' ? 'selectedNav ': ''}`}>
             <Link to='/Merch' onClick={()=>selectNavItem('Merch' )} >Merch</Link>
           </li>
-          {cart.length === 0 ? '' : <p id='cartquantity'>{cart.length}</p>}
+          {cart.length === 0 ? '' : <p id='cart-quantity'>{totalItems}</p>}
           <li className={`nav-item ${navItemSelected === 'Cart' ? 'selectedNav ': ''}`}>
             <Link to='/Cart' onClick={()=>selectNavItem('Cart' )} >Cart</Link>
           </li>

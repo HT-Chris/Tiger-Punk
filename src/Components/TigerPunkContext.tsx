@@ -26,9 +26,10 @@ type TigerPunkProps ={
     cartQuantity: number,
     currentItemQuantity: number,
     updateCart: (ItemID:number, quantity:number) => void,
-    updateItemQuantity: (num:number) => void, 
+    // updateItemQuantity: (num:number) => void, 
     removeItem:(itemId:number) => void,
     selectNavItem: (item:string) => void,
+    clearCart: () => void,
 
 }
 type TigerPunkProviderProps = {children:ReactNode}
@@ -47,6 +48,7 @@ export const TigerPunkContextProvider = ({children} : TigerPunkProviderProps) =>
 
     const selectNavItem = (item:string) =>{
         setNavItemSelected(item)
+        window.scrollTo(0, 0)
       }
       
       const updateCart=(itemID:number, n:number)=>{
@@ -58,15 +60,18 @@ export const TigerPunkContextProvider = ({children} : TigerPunkProviderProps) =>
           const newItem:cartItemType = {...searchedItem, quantity:n}
 
         if(cart.find((item) => item.id === itemID)){
-            const newList = cart.filter((item) => item.id !== itemID)
-            setCart(newList)
+            setCart(prevCart => {
+                return prevCart.map(item => 
+                  item.id === itemID ? { ...item, quantity:  n } : item
+                );
+              });
         }else{
         setCart((prev) =>
             ([...prev, newItem])
         )}
       }
 
-      const updateItemQuantity=(n:number)=>{
+      const updateItemQuantity=(itemID:number,n:number)=>{
         setCurrentItemQuantity(n)
       }
 
@@ -75,7 +80,11 @@ export const TigerPunkContextProvider = ({children} : TigerPunkProviderProps) =>
         setCart(newList)
       }
 
-const tigerPunkValues = {navItemSelected, selectNavItem, cart, currentItemQuantity, cartQuantity, updateCart, updateItemQuantity, removeItem}
+      const clearCart = () =>{
+        setCart([])
+      }
+
+const tigerPunkValues = {navItemSelected, selectNavItem, cart, currentItemQuantity, cartQuantity, updateCart, updateItemQuantity, removeItem, clearCart}
 
     return (
         <TigerPunkContext.Provider value={tigerPunkValues}>

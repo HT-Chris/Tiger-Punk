@@ -4,7 +4,7 @@ export const products = [
 	name: "Hoodie",
 	description: "Comfortable and warm hoodie",
 	price: 49.99,
-	imageUrl: "url_to_hoodie_image",
+	imageUrl: "/src/assets/Products/hoodie.png",
 	category: "Clothing",
 	},
 	{
@@ -12,7 +12,7 @@ export const products = [
 	name: "T-Shirt",
 	description: "Soft and stylish t-shirt",
 	price: 19.99,
-	imageUrl: "url_to_tshirt_image",
+	imageUrl: "/src/assets/Products/tShirtBlack.png",
 	category: "Clothing",
 	},
 	{
@@ -20,7 +20,7 @@ export const products = [
 	name: "Mug",
 	description: "Ceramic coffee mug",
 	price: 9.99,
-	imageUrl: "url_to_mug_image",
+	imageUrl: "/src/assets/Products/mug.png",
 	category: "Accessories",
 	},
 	{
@@ -28,7 +28,7 @@ export const products = [
 	name: "Hat",
 	description: "Cool and comfortable hat",
 	price: 14.99,
-	imageUrl: "url_to_hat_image",
+	imageUrl: "/src/assets/Products/hat.png",
 	category: "Accessories",
 	},
   ];

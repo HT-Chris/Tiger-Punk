@@ -49,6 +49,9 @@ export const Footer = () => {
 			</div>
 			<div id="footer-form"></div>
 			<div id="footer-social">
+				<div id="spotify-icon" className="social-icon">
+					<a href="/"></a>
+				</div>
 				<div id="tiktok-icon" className="social-icon">
 					<a href="/"></a>
 				</div>

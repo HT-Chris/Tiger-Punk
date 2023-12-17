@@ -5,7 +5,7 @@ import { Merch } from './Pages/Merch'
 import { TourDates } from './Pages/TourDates'
 import { Contacts } from './Pages/Contacts'
 import { Route, Routes} from 'react-router-dom'
-import { ProductDetails } from './Components/ProductDetails'
+import { ProductDetails } from './Pages/ProductDetails'
 import { Cart } from './Pages/Cart'
 
 

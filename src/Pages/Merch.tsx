@@ -10,19 +10,24 @@ export const Merch = () => {
 		<NavBar/>
 		<div id="merch-page">
 
-			{products.map((product) =>
-			<div className="polaroid-card product-card"  key={product.id}>
-				<Link to={`/product/${product.id}`}>
-			<div className="polaroid-img-container">
-				<img className='polaroid-img product-card-img' src={product.imageUrl} alt={`${product.name}`} />
-			</div>
-			
-			<h2>{product.name}</h2>
-				<p>${product.price}</p>
-				</Link>
-			</div>
-			)}
+			<h1>Merch</h1>
 
+			<div id="merch-page-items">
+
+				{products.map((product) =>
+				<div className="polaroid-card product-card"  key={product.id}>
+					<Link to={`/product/${product.id}`}>
+				<div className="polaroid-img-container">
+					<img className='polaroid-img product-card-img' src={product.imageUrl} alt={`${product.name}`} />
+				</div>
+				
+				<h2>{product.name}</h2>
+					<p className="product-price">${product.price}</p>
+					</Link>
+				</div>
+				)}
+
+			</div>
 		</div>
 		
 		<Footer/>

@@ -13,7 +13,7 @@ export const Polaroid = ({image, date, style}:PolaroidProps) => {
 	return(
 		<>
 
-		<div className="polaroid-card" style={style}>
+		<div className="polaroid-card home-gallery" style={style}>
 			<div className="polaroid-img-container">
 				<img className='polaroid-img' src={image} alt={`${date}`} />
 			</div>
